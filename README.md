@@ -3,6 +3,13 @@ This project deals with training a [Pix2pix GAN][1] for generating new histopath
 ![](result_unitopatho.png)
 _From left to right: mask, real image, synthetic image._
 
+## Abstract
+Colorectal cancer (CRC) is a type of cancer that begins in the large intestine (colon), the final part of the digestive tract. It typically affects older individuals, though it can occur at any age. It usually begins as small, noncancerous (benign) clumps of cells called polyps that form on the inside of the colon. Over time some of these polyps can become colon cancers. There are various parameters to determine the malignant potential of polyps that pathologists analyze: the type of polyps, their size and the degree of dysplasia. In this scope, a proper screening can help to find malignant polyps at an early stage, preventing their transformation into cancer. 
+
+In this work we study UniToPatho, a dataset of annotated high-resolution colorectal images, comprising different histological samples of colorectal polyps, collected from patients undergoing cancer screening. 
+
+Deep Learning based systems can help doctors in the delicate task of detecting and diagnosing the different types of colorectal polyps and their associated risk. In fact, Deep Learning techniques are able to get an extraordinary accuracy in medical pattern recognition, however they require large sets of annotated training images. So, the main goal of this work is to do data augmentation on UniToPatho, so that with a larger dataset it is expected that Deep Learning algorithms are more likely to get a higher accuracy. In particular, this work dealt with doing data augmentation by producing new samples of histopathological tissue starting from the semantic segmentation masks, using a particular kind of Generative Adversarial Network (GAN): a Pix2pix GAN. The idea is that if we generate new samples starting from the segmentation masks, we can produce highly precise, detailed and manageable outputs. 
+
 ## Overview of Code
 [dataset](./dataset) directory includes some dataset implemented in Pytorch, used to train the GAN. 
 * [pannuke.py](./dataset/pannuke.py) consists of the colon images taken from [PanNuke][2] dataset.
